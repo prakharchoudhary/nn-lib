@@ -1,8 +1,8 @@
 # NeuralNets
-A collection of all commonly used deep learning layers and a few examples to use them. This is more or less a Deep Learning library implemented purely in Python. THe goal is to understand the working of various layers and thus it is not omptimised for large training purposes(at least not yet!).
+A collection of all commonly used deep learning layers and a few examples to use them. This is more or less a Deep Learning library implemented purely in Python. The goal is to understand the working of various layers and thus it is not omptimised for large training purposes(at least not yet!).
 
 ## Layers and functions to implement:
-* - [ ] Dense
+* - [x] Dense
 * - [ ] Convolution 2D
 * - [ ] Max Pooling
 * - [ ] Average Pooling
