@@ -1,0 +1,1 @@
+# Add all the activation functions: sigmoid, softmax, reLu etc. 
