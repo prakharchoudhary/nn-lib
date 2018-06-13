@@ -7,7 +7,7 @@ A collection of all commonly used deep learning layers and a few examples to use
 * - [ ] Max Pooling
 * - [ ] Average Pooling
 * - [ ] Softmax Activation
-* - [ ] ReLU Activation
+* - [x] ReLU Activation
 * - [ ] Batch Normalization(regularisation)
 * - [ ] Dropout
 * - [ ] Xavier Initialization
