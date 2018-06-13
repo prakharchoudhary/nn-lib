@@ -14,6 +14,29 @@ class Network:
 		self.network.append(layer)
 		return True
 
+	def _softmax_crossentropy_with_logits(self, logits, reference_ans):
+		"""
+		Compute crossentropy from logits[batch,n_classes] and ids of correct answers
+		----------------------------------------------------------------------------
+		loss = - a(correct) + log(summation(e^ai))
+
+		"""
+		logits_for_ans = logits[np.arange(len(logits)),reference_answers]
+		xentropy = - logits_for_ans + np.log(np.sum(np.exp(logits), axis=-1))
+		return xentropy
+
+	def _grad_softmax_crossentropy_with_logits(self, logits, reference_answers):
+		"""
+		Compute crossentropy gradients from logits and ids of correct answers.
+		"""
+		ones_for_answers = np.zeros_like(logits)
+		ones_for_answers[np.arange(len(logits)),reference_answers] = 1
+
+		softmax = np.exp(logits) / np.exp(logits).sum(axis=-1, keepdims=True)
+
+		return (-ones_for_answers + softmax) / logits.shape[0]
+
+
 	def forward(self, X):
 		"""
 		Return a list of activations for each layer. 
@@ -46,11 +69,10 @@ class Network:
 			logits = layer_activations[-1]
 
 			# Compute the loss and initialize gradient
-			# TODO: take the type of loss calculation when initializing
-			# the model.
+			# NOTE: currently only softmax cross entropy is available
 			
-			# loss = 
-			# loss_grad = 
+			loss = self._softmax_crossentropy_with_logits(logits, y)
+			loss_grad = self._grad_softmax_crossentropy_with_logits(logits, y)
 
 			grad = loss_grad
 			for idx, layer in enumerate(self.network[::-1]):
