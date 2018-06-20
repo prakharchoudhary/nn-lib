@@ -6,11 +6,11 @@ A collection of all commonly used deep learning layers and a few examples to use
 * - [ ] Convolution 2D
 * - [ ] Max Pooling
 * - [ ] Average Pooling
-* - [ ] Softmax Activation
+* - [x] Softmax Activation
 * - [x] ReLU Activation
 * - [ ] Batch Normalization(regularisation)
 * - [ ] Dropout
-* - [ ] Xavier Initialization
+* - [x] Xavier Initialization
 
 ## Examples:
 * - [ ] A simple Neural Net trained on MNIST dataset
